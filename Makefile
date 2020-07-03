@@ -30,7 +30,7 @@ manage:
 	$(CMD )python manage.py $(RUN_ARGS)
 
 test:
-	$(CMD) pytest --verbosity=2 --showlocals --strict --log-level=DEBUG 
+	$(CMD) pytest --verbosity=2 --showlocals --strict --log-level=DEBUG
 
 
 clean:
