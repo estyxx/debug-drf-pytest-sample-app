@@ -1,4 +1,4 @@
-.PHONY: all clean lint test test-cov manage run
+.PHONY: all clean lint test manage run
 # If the first argument is "run"...
 ifeq (manage,$(firstword $(MAKECMDGOALS)))
   # use the rest as arguments for "run"
@@ -30,10 +30,8 @@ manage:
 	$(CMD )python manage.py $(RUN_ARGS)
 
 test:
-	$(CMD) pytest --verbosity=2 --showlocals --strict --log-level=DEBUG --cov=.
+	$(CMD) pytest --verbosity=2 --showlocals --strict --log-level=DEBUG 
 
-test-cov:
-	$(CMD) pytest --cov=. --cov-report html
 
 clean:
 	git clean -Xdf # Delete all files in .gitignore
